@@ -18,7 +18,9 @@
   - GitHub: [@brichardson2468](https://github.com/brichardson2468)
   - Email: [brri6685@colorado.edu](mailto:brri6685@colorado.edu)
   
-- [Enter other team members]
+- **Brady Gagerman**
+  - Github:[@bradygagerman](https://github.com/bradygagerman)
+  - Email: [brga1958@colorado.edu](mailto:brga1958@colorado.edu) 
 
 ## Team Meetings
 - **Day/Time/TimeZone:** 5 pm Wednesday (MST)
