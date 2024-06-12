@@ -11,8 +11,12 @@
   - Email: [like4684@colorado.edu](mailto:like4684@colorado.edu)
   
 - **Quinn Ridgeway**
-  - Github: [@QR199](https://github.com/QR199)
+  - GitHub: [@QR199](https://github.com/QR199)
   - Email: [quri8255@colorado.edu](mailto:quri8255@colorado.edu)
+
+- **Brad Richardson**
+  - GitHub: [@brichardson2468](https://github.com/brichardson2468)
+  - Email: [brri6685@colorado.edu](mailto:brri6685@colorado.edu)
   
 - [Enter other team members]
 
