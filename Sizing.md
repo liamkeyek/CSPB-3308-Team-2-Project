@@ -1,15 +1,25 @@
 **Lab 3 Group Part**
+Team 2
+Freing Nudge
+5PM MST Wednesday
+Planning Poker Results
+Brady Gagerman, Brad Richardson, Liam Keyek, Quinn Ridgeway
+Description of each User Story using the following format:
+story (as a ... I want ... so that ...)
+agreed upon effort level
+a set of acceptance criteria.
+See the appendix below to see some examples of good and bad acceptance criteria.
+
+
 For a Moodle-type service:
-As a user, I want to upload graphs & images so that I can share them with peers.
-8
 User Story Card
 ______________________________________________________________________________
-As a 	: <user role>
-I want	: <description of desired behavior>
-So that : <reason for desired behavior / what you get from it>
+As a 	: <As a user>
+I want	: <I want to upload graphs & images >
+So that : <so that I can share them with peers.>
 
 Effort
-Level	: <level of effort : dimensionless units>
+Level	: <level of effort : 8>
 
 Acceptance Criteria
 Given	: 	<context of action>
@@ -18,16 +28,14 @@ Then 	: 	<set of observable outcomes>
 ____________________________________________________________________________
 
 
-As an administrator, I want to introduce an anti-plagiarism tool.
-20
 User Story Card
 ______________________________________________________________________________
-As a 	: <user role>
-I want	: <description of desired behavior>
+As a 	: <As an administrator,>
+I want	: <I want to introduce an anti-plagiarism tool.>
 So that : <reason for desired behavior / what you get from it>
 
 Effort
-Level	: <level of effort : dimensionless units>
+Level	: <level of effort : 20>
 
 Acceptance Criteria
 Given	: 	<context of action>
@@ -35,16 +43,15 @@ When 	: 	<some action is completed>
 Then 	: 	<set of observable outcomes>
 ____________________________________________________________________________
 
-As a user, I want data visualization on Moodle, so I have better understanding of my progress.
-5
+
 User Story Card
 ______________________________________________________________________________
-As a 	: <user role>
-I want	: <description of desired behavior>
-So that : <reason for desired behavior / what you get from it>
+As a 	: <As a user>
+I want	: <I want data visualization on Moodle>
+So that : <so I have better understanding of my progress.
 
 Effort
-Level	: <level of effort : dimensionless units>
+Level	: <level of effort : 5>
 
 Acceptance Criteria
 Given	: 	<context of action>
