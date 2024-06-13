@@ -4,6 +4,7 @@ Freing Nudge
 5PM MST Wednesday
 Planning Poker Results
 Brady Gagerman, Brad Richardson, Liam Keyek, Quinn Ridgeway
+https://o365coloradoedu-my.sharepoint.com/:v:/g/personal/like4684_colorado_edu/EclBESZpJQNBtD7bUySzihEB25x_qyT7M5wCfSI6udFOvw?referrer=Teams.TEAMS-ELECTRON&referrerScenario=MeetingChicletGetLink.view.view 
 Description of each User Story using the following format:
 story (as a ... I want ... so that ...)
 agreed upon effort level
