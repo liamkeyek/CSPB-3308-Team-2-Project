@@ -49,6 +49,6 @@ In our busy lives, it’s easy to lose track of the last time we connected with 
   - **Sprint Review and Retrospective:** At the end of each sprint, we will review our work, demonstrate completed features, and reflect on what went well and what could be improved.
 
 ## Project Tracking Software
-- **Trello Board:** [need to create link]
+- **Trello Board:** [Trello Link](https://trello.com/invite/b/FuSwL9kK/ATTI7e6ccb7b0776a158b4c104fe2fd66c95BDACD334/cspb-3308-team-2)
 
   (Professor will be granted access to the Trello board for tracking progress and providing feedback, as well as out GitHub repo.)
