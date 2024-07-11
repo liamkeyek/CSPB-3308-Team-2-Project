@@ -1,6 +1,67 @@
 # Page 1 - Liam
+## Title: Login Page
+
+### Description:
+The login page is the entry point for users to access their Friend Nudge account. It features a simple and clean design with fields for username/email and password, along with a login button. There's also an option to create a new account for first-time users.
+
+### Mockup:
+![Login Page Image](images/login_page_image.png)
+
+### Parameters:
+- None (This is the initial page)
+
+### Data Needed:
+- User credentials database (for authentication)
+
+### Link Destinations:
+- Login button: Redirects to Calendar page (Page 2) upon successful authentication
+- "Forgot Password?": Links to a password reset page
+- "New Account": Links to a registration page
+
+### List of Tests:
+1. Test successful login with valid credentials
+2. Test login failure with invalid credentials
+3. Test error message display for empty fields
+4. Test "Forgot Password?" link functionality
+5. Test "New Account" link functionality
 
 # Page 2 - Liam
+## Title: Calendar Page
+
+### Description:
+The Calendar page displays a monthly view of scheduled friend interactions. It shows upcoming reminders for contacting friends and allows users to add new reminders or modify existing ones.
+
+### Mockup:
+![Login Page Image](images/cal_page.png)
+
+### Parameters:
+- userID: ID of the current user
+- currentDate: The current date to determine which month to display
+
+### Data Needed:
+- User's friend list
+- Scheduled reminders for the displayed month
+- User's preferences for reminder frequency
+
+### Link Destinations:
+- User Profile: Links to the user's profile page
+- Add button: Opens a form to add a new reminder
+- Date cells: Clicking on a date opens a detail view for that day
+- Reminder items: Clicking on a reminder opens its detail/edit view
+- Recents: Links to the Recents page
+- Challenges: Links to the Weekly Challenges page
+- More: Links to additional options or settings
+
+### List of Tests:
+1. Test correct display of the current month and year
+2. Test navigation between months (previous and next)
+3. Test accurate population of reminders on the calendar
+4. Test "Add" functionality for creating new reminders
+5. Test clicking on a date cell to view details
+6. Test clicking on a reminder to view/edit details
+7. Test display of upcoming reminders list
+8. Test navigation to Recents, Challenges, and More pages
+9. Test user profile link functionality
 
 # Page 3 - Brady
 
