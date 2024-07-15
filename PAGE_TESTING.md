@@ -93,6 +93,38 @@ The Calendar page displays a monthly view of scheduled friend interactions. It s
 
 # Page 4 - Brad
 
+## Title: Add New Friend Page
+
+### Description:
+The Add New Friend Page allows users to add new friends to their Friend Nudge account. This page is designed to be user-friendly and straightforward, ensuring that users can easily input the necessary information to expand their friend list.
+
+### Mockup:
+<img width="630" alt="Screenshot 2024-07-15 at 10 29 55 AM" src="https://github.com/user-attachments/assets/3f67f57f-a348-410c-be72-d1f5148fa27f">
+
+### Parameters:
+- userID: The ID of the current user.
+- friendData: Information about the new friend being added (name, contact information, etc.).
+
+### Data Needed:
+- User’s current friend list (to check for duplicates).
+- Database access to store new friend information.
+
+### Link Destinations:
+- Save button: Saves the new friend data and redirects to the Friend List page.
+- Cancel button: Cancels the action and redirects to the Friend List page.
+
+### List of Tests:
+1. Test successful addition of a new friend:
+    - Input valid friend data and verify that it is saved correctly.
+2. Test duplicate friend check:
+    - Attempt to add a friend who is already in the friend list and verify that an appropriate error message is displayed.
+3. Test error message display for empty fields:
+    - Leave required fields empty and verify that error messages are shown.
+4. Test Save button functionality:
+    - Ensure that clicking the Save button with valid data saves the friend and redirects appropriately.
+5. Test Cancel button functionality:
+    - Ensure that clicking the Cancel button discards the input and redirects appropriately.
+
 # Page 5 - Quinn
 
 ## Title: Weekly Challenges
