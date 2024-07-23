@@ -55,7 +55,7 @@ def calender():
 
 @app.route('/recents')
 def recents():
-    return "Recent page"
+    return make_response(render_template("recents.html"))
 
 @app.route('/friends')
 def friends():
