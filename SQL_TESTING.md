@@ -184,10 +184,32 @@
 1. **Test adding a new challenge:**
    - **Pre-conditions:** The challenge doesn't exists in the database.
    - **Test Steps:**
-     1. Execute the function with a valid challenges parameters.
+     1. Execute the function with valid challenges parameters.
      2. Verify the challenges count has increased by one.
    - **Expected Result:** Correct challenge details are added.
    - **Actual Result:** Verify challenge in database.
    - **Status:** Pass/Fail
    - **Notes:** N/A
    - **Post-conditions:** The new challenge is in the database.
+
+### Access Method 5: get_challenge_by_id
+**Name:** get_challenge_by_id  
+**Description:** accesses a challenge by it's unique ID.
+
+**Parameters:**
+- **Challenge_id:** Unique identifier for each challenge.
+
+**Return Values:**
+- **Challenge_object:** returns unique challenge
+
+**Tests:**
+1. **Test adding a new challenge:**
+   - **Pre-conditions:** The challenge exists in the database.
+   - **Test Steps:**
+     1. Execute the function with valid challenge parameters.
+     2. Verify the returned challenge has identical details to table.
+   - **Expected Result:** Correct challenge is returned.
+   - **Actual Result:** Verify returned challenge matches.
+   - **Status:** Pass/Fail
+   - **Notes:** N/A
+   - **Post-conditions:** The challenge is returned successfully.
