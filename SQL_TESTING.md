@@ -162,3 +162,32 @@
    - **Status:** Pass/Fail
    - **Notes:** N/A
    - **Post-conditions:** List of reminders is retrieved successfully.
+   
+### Access Method 4: add_Challenge
+**Name:** add_Challenge  
+**Description:** adds a challenge to the challenges table.
+
+**Parameters:**
+- **title:** The name for each challenge.
+- **description:** A description for each challenge.
+- **joint_flag:** Boolean flag that determines if challenge is joint or individual.
+- **user_ID_a:** Stores one of the users in a joint challenge foreign key to users.
+- **user_ID_b:** Stores the second user in a joint challenge foreign key to users.
+- **start_date:** Stores the date that the challenge begins.
+- **end_date:** Stores the date that the challenge ends.
+
+
+**Return Values:**
+- **Challenge_id:** Unique identifier for each challenge.
+
+**Tests:**
+1. **Test adding a new challenge:**
+   - **Pre-conditions:** The challenge doesn't exists in the database.
+   - **Test Steps:**
+     1. Execute the function with a valid challenges parameters.
+     2. Verify the challenges count has increased by one.
+   - **Expected Result:** Correct challenge details are added.
+   - **Actual Result:** Verify challenge in database.
+   - **Status:** Pass/Fail
+   - **Notes:** N/A
+   - **Post-conditions:** The new challenge is in the database.
