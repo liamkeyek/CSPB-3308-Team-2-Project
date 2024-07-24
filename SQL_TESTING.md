@@ -66,6 +66,34 @@
    - **Status:** Pass/Fail
    - **Notes:** N/A
    - **Post-conditions:** The reminder exists in the database.
+   
+### Table 4: Challenges
+**Table Name:** Challenges   
+**Table Description:** Stores the weekly challenges, while inheriting from the Users, and friends tables 
+
+**Fields:**
+- **Challenge_id:** Unique identifier for each challenge.
+- **title:** The name for each challenge.
+- **description:** A description for each challenge.
+- **joint_flag:** Boolean flag that determines if challenge is joint or individual.
+- **user_ID_a:** Stores one of the users in a joint challenge foreign key to users.
+- **user_ID_b:** Stores the second user in a joint challenge foreign key to users.
+- **start_date:** Stores the date that the challenge begins.
+- **end_date:** Stores the date that the challenge ends.
+
+
+**Tests:**
+1. **Test adding a new challenge:**
+   - **Pre-conditions:** The challenge does not exist in the database.
+   - **Test Steps:**
+     1. Execute the SQL statement to insert a new challenge.
+     2. Verify the challenge count has increased by one.
+   - **Expected Result:** challenge is added to the database.
+   - **Actual Result:** Verify challenge is present in the database.
+   - **Status:** Pass/Fail
+   - **Notes:** N/A
+   - **Post-conditions:** The new challenge exists in the database.
+
 
 ## Data Access Methods and Tests
 
