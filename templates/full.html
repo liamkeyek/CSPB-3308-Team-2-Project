@@ -1,9 +1,40 @@
-<!--Main html function-->
+<!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="static/css/full.css">
-    <script src="static/javascript/full_java.js"></script>
-  </head>
-  <body>
-  </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Friend Nudge{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/full.css') }}">
+    {% block extra_styles %}
+    <!-- Page-specific stylesheets will go here -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/recents.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/friends.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/homess') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/upcoming.css') }}">
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('recents') }}">Recents</a></li>
+                <li><a href="{{ url_for('friends') }}">Friends</a></li>
+                <li><a href="{{ url_for('upcoming') }}">Upcoming</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        <!-- Page-specific content will go here -->
+        {% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2024 Friend Nudge</p>
+    </footer>
+</body>
 </html>

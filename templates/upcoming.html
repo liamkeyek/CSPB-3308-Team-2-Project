@@ -1,0 +1,12 @@
+{% extends "full.html" %}
+
+{% block title %}Upcoming{% endblock %}
+
+{% block extra_styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/upcoming.css') }}">
+{% endblock %}
+
+{% block content %}
+    <h1>Upcoming</h1>
+    <p>Welcome to the Upcoming page!</p>
+{% endblock %}

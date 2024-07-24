@@ -1,0 +1,12 @@
+{% extends "full.html" %}
+
+{% block title %}About{% endblock %}
+
+{% block extra_styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+{% endblock %}
+
+{% block content %}
+    <h1>About</h1>
+    <p>Welcome to the about page!</p>
+{% endblock %}

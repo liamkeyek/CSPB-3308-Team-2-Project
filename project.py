@@ -22,48 +22,42 @@ def prefix_url():
 ###############################################################################
 ## Required Routes for Project:
 ##
-##     1. static text page, "index"   @app.route('/')
+##     1. static text page, "index"   @app.route(/)
 ##     2. static text page, "about"   @app.route('/about')
 ##     3. dynamic page, "login"       @app.route('/login')
 ##     4. dynamic page, "home"        @app.route('/home') - Liam
-##     5. dynamic page, "calendar"    @app.route('/calendar') - Liam
 ##     6. dynamic page,"recents"      @app.route('/recents') - Brady
 ##     7. dynamic page, "newfriends"  @app.route('/friends') - Brad
 ##     8. dynamiv page, "upcoming"    @app.route('/upcoming') - Quinn
 ##
 ################################################################################
-
 @app.route('/')
 def index():
-    return "Index page"
-
-@app.route('/about')
-def about():
-    return "About page"
-
-@app.route('/login')
-def login():
-    return "Login page"
+    return render_template("full.html")
 
 @app.route('/home')
 def home():
-    return "Home page"
+    return render_template("home.html")
 
-@app.route('/calender')
-def calender():
-    return "Calender page"
+@app.route('/about')
+def about():
+    return render_template("about.html")
+
+@app.route('/login')
+def login():
+    return render_template("login.html")
 
 @app.route('/recents')
 def recents():
-    return make_response(render_template("recents.html"))
+    return render_template("recents.html")
 
 @app.route('/friends')
 def friends():
-    return "New friends page"
+    return render_template("friends.html")
 
 @app.route('/upcoming')
 def upcoming():
-    return "Upcoming page"
+    return render_template("upcoming.html")
 
 ###############################################################################
 # main driver function

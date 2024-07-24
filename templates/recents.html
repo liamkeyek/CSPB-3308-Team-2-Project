@@ -1,0 +1,39 @@
+{% extends "full.html" %}
+
+{% block title %}Recents{% endblock %}
+
+{% block extra_styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/recents.css') }}">
+{% endblock %}
+
+{% block content %}
+    <title>Recents</title>
+    <script src="{{ url_for('static', filename='javascript/recents.js') }}"></script>
+    <div id="title">
+        <h1>Recents</h1>
+    </div>
+    <div class="top">
+        <div id="last">
+            <h3>Last Messaged</h3>
+            <div class="p-container">
+                <p>Name</p>
+                <p>Date</p>
+            </div>
+        </div>
+        <div id="chat">
+            <h3>Chat Soon</h3>
+            <div class="p-container">
+                <p>Name</p>
+                <p>Next Date</p>
+            </div>
+        </div>
+        <div id="reconnect">
+            <h3>Reconnect</h3>
+            <div class="p-container">
+                <p>Name</p>
+                <p>Last Missed</p>
+                <p>Relationship</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

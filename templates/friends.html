@@ -1,0 +1,12 @@
+{% extends "full.html" %}
+
+{% block title %}Friends{% endblock %}
+
+{% block extra_styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/friends.css') }}">
+{% endblock %}
+
+{% block content %}
+    <h1>Friends</h1>
+    <p>Welcome to the friends page!</p>
+{% endblock %}

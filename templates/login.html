@@ -1,0 +1,12 @@
+{% extends "full.html" %}
+
+{% block title %}Log In{% endblock %}
+
+{% block extra_styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}
+
+{% block content %}
+    <h1>Log In</h1>
+    <p>Welcome to the Log In page!</p>
+{% endblock %}
