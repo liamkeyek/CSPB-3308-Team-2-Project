@@ -1,0 +1,79 @@
+
+Table: Users
+Column Name  Type       Data      
+-------------------------------------
+Column Name  Type     
+-------------------
+user_id     INTEGER  
+username    TEXT     
+email       TEXT     
+password    TEXT     
+created_at  TIMESTAMP
+
+1  brady_gagerman   brga1958@colorado.edu          password1  2024-07-30 19:26:56.235343
+2  liam_keyek       liam.keyek@colorado.edu        password2  2024-07-30 19:26:56.235357
+3  brad_richardson  brad.richardson@colorado.edu   password3  2024-07-30 19:26:56.235358
+4  quinn_ridgeway   quinlan.ridgeway@colorado.edu  password4  2024-07-30 19:26:56.235360
+
+Table: sqlite_sequence
+Column Name  Type  Data
+----------------
+Column Name  Type
+----
+name  
+seq   
+
+Users       4
+Friends     6
+Reminders   4
+Challenges  3
+
+Table: Friends
+Column Name     Type     Data          
+-------------------------------------------
+Column Name     Type   
+---------------------
+friend_id       INTEGER
+user_id         INTEGER
+friend_user_id  INTEGER
+
+1  1  2
+2  1  3
+3  1  4
+4  2  3
+5  2  4
+6  3  4
+
+Table: Reminders
+Column Name    Type     Data         
+-----------------------------------------
+Column Name    Type   
+--------------------
+reminder_id    INTEGER
+user_id        INTEGER
+friend_id      INTEGER
+reminder_date  DATE   
+message        TEXT   
+
+1  1  1  2024-08-06  Reminder to interact with user 2
+2  1  2  2024-08-06  Reminder to interact with user 3
+3  2  4  2024-08-06  Reminder to interact with user 4
+4  4  6  2024-08-06  Reminder to interact with user 3
+
+Table: Challenges
+Column Name   Type     Data        
+---------------------------------------
+Column Name   Type   
+-------------------
+challenge_id  INTEGER
+title         TEXT   
+description   TEXT   
+joint_flag    BOOLEAN
+user_id_a     INTEGER
+user_id_b     INTEGER
+start_date    DATE   
+end_date      DATE   
+
+1  Challenge 1  This do be a random challenge 1  1  1  2  2024-07-30  2024-08-06
+2  Challenge 2  This is random challenge 2       1  3  4  2024-07-30  2024-08-06
+3  Challenge 3  Random challenge 3               1  1  4  2024-07-30  2024-08-06

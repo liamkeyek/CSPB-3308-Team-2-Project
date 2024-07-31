@@ -1,6 +1,7 @@
 #author - Brady Gagerman
 #usage - python3 database.py
 #usage 2 - (remove database) python3 database.py remove
+#usage 3 - (view database) python3 database.py ouput
 import os
 import sys
 import sqlite3
@@ -151,16 +152,78 @@ def print_tables(db_filename):
             print(f"\t\t{attr}")
         print("")
 
+# output to a file - chatgpt formatted for me so it is more readable
+# needed it, because I didn't want to spend hours on end making a text file look pretty
+# it's still not that pretty but good enough to view the data
+def output_to_file(db_filename, output_filename):
+    conn = sqlite3.connect(db_filename)
+    c = conn.cursor()
+    c.execute("SELECT name FROM sqlite_master WHERE type='table';")
 
+    tables = c.fetchall()
+
+    with open(output_filename, 'w') as file:
+        for t in tables:
+            table_name = t[0]
+            file.write(f"\nTable: {table_name}\n")
+            
+            # Fetch column names and data
+            c.execute(f"PRAGMA table_info({table_name});")
+            columns = c.fetchall()
+            col_names = [col[1] for col in columns]
+            col_types = [col[2] for col in columns]
+
+            # Determine the maximum length of column names and types for formatting
+            col_name_width = max(len(name) for name in col_names)
+            col_type_width = max(len(type) for type in col_types)
+            data_width = col_name_width  # Use the widest column for data alignment
+
+            # Write header
+            file.write(f"{'Column Name':<{col_name_width}}  {'Type':<{col_type_width}}  {'Data':<{data_width}}\n")
+            file.write('-' * (col_name_width + col_type_width + data_width + 8) + '\n')
+
+            # Fetch data from table
+            c.execute(f"SELECT * FROM {table_name};")
+            rows = c.fetchall()
+
+            # Write column names and types
+            file.write(f"{'Column Name':<{col_name_width}}  {'Type':<{col_type_width}}\n")
+            file.write('-' * (col_name_width + col_type_width) + '\n')
+            for col_name, col_type in zip(col_names, col_types):
+                file.write(f"{col_name:<{col_name_width}}  {col_type:<{col_type_width}}\n")
+            file.write('\n')
+
+            # Write data rows
+            if rows:
+                # Determine the maximum length of data in each column
+                data_widths = [max(len(str(row[i])) for row in rows) for i in range(len(col_names))]
+
+                for row in rows:
+                    row_data = [str(row[i]).ljust(data_widths[i]) for i in range(len(row))]
+                    file.write('  '.join(row_data) + '\n')
+
+            else:
+                file.write("No data available.\n")
+
+    conn.close()
+    print(f"Database content has been written to '{output_filename}'")
+
+
+    
 ### Main
 if __name__ == "__main__":
 
     db_filename = 'ourdata.db'  # Just an example file to make sure it works
 
     # Check command-line arguments
-    if len(sys.argv) > 1 and sys.argv[1] == 'remove':
-        remove_db(db_filename)
+    if len(sys.argv) > 1:
+        if sys.argv[1] == 'remove':
+            remove_db(db_filename)
+        elif sys.argv[1] == 'output':
+            output_to_file(db_filename, 'database.txt')
+        else:
+            print(f"Unknown argument '{sys.argv[1]}'.")
     else:
         create(db_filename)  # Creates a practice database
         fill(db_filename)  # Fills the database with initial data
-        print_tables(db_filename)  # Prints database structure
+        # print_tables(db_filename)   Prints database structure
