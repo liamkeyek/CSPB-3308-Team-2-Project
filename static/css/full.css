@@ -1,20 +1,17 @@
-/* Ensure the html and body cover the full viewport height */
 html, body {
     height: 100%;
     margin: 0;
 }
 
-/* Set up the body as a flex container */
 body {
     display: flex;
     flex-direction: column;
 }
 
-/* Header styles */
 header {
     background-color: #333;
     padding: 10px 0;
-    flex-shrink: 0; /* Prevent header from shrinking */
+    flex-shrink: 0; 
 }
 
 nav ul {
@@ -42,17 +39,15 @@ nav ul li a:hover {
     background-color: #555;
 }
 
-/* Main content area */
 main {
-    flex: 1; /* Allow main content to grow and push footer to the bottom */
+    flex: 1; 
     padding: 20px;
 }
 
-/* Footer styles */
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 10px 0;
-    flex-shrink: 0; /* Prevent footer from shrinking */
+    flex-shrink: 0; 
 }

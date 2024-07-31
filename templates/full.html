@@ -6,7 +6,7 @@
     <title>{% block title %}Friend Nudge{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/full.css') }}">
     {% block extra_styles %}
-    <!-- Page-specific stylesheets will go here -->
+    <!-- Page specific css files will go here -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/recents.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/friends.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
@@ -30,7 +30,7 @@
     </header>
     <main>
         {% block content %}
-        <!-- Page-specific content will go here -->
+        <!-- Page specific content will go here -->
         {% endblock %}
     </main>
     <footer>

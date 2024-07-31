@@ -4,6 +4,7 @@
 ## Flask either in the csel.io virtual machine or running on your local machine.
 ## The module will create an app for you to use
 import prefix
+import sqlite3
 
 from flask import Flask, url_for, make_response, render_template
 
@@ -13,6 +14,15 @@ app = Flask(__name__)
 # Insert the wrapper for handling PROXY when using csel.io virtual machine
 # Calling this routine will have no effect if running on local machine
 prefix.use_PrefixMiddleware(app)   
+
+#our database
+database = 'ourdata.db'
+
+#function to get the database
+def get_database():
+    conn = sqlite3.connect(database)
+    conn.row_factory = sqlite3.Row # gets us access to columns by name
+    return conn
 
 # test route to show prefix settings
 @app.route('/prefix_url')  
