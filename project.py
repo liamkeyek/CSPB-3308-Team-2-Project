@@ -59,7 +59,19 @@ def login():
 
 @app.route('/recents')
 def recents():
-    return render_template("recents.html")
+    conn = get_database()
+    c = conn.cursor()
+    user_id = 1  # change for each specific user
+    c.execute('''
+        SELECT R.reminder_id, U.username, R.last_messaged, R.reminder_date, R.message, F.relationship_type
+        FROM Reminders R
+        JOIN Friends F ON R.friend_id = F.friend_id
+        JOIN Users U ON F.friend_user_id = U.user_id
+        WHERE R.user_id = ?
+    ''', (user_id,))
+    reminders = c.fetchall()
+    conn.close()
+    return render_template("recents.html", reminders=reminders)
 
 @app.route('/friends')
 def friends():

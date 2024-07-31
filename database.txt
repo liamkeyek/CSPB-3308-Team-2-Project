@@ -10,10 +10,10 @@ email       TEXT
 password    TEXT     
 created_at  TIMESTAMP
 
-1  brady_gagerman   brga1958@colorado.edu          password1  2024-07-30 19:39:47.368958
-2  liam_keyek       liam.keyek@colorado.edu        password2  2024-07-30 19:39:47.368969
-3  brad_richardson  brad.richardson@colorado.edu   password3  2024-07-30 19:39:47.368970
-4  quinn_ridgeway   quinlan.ridgeway@colorado.edu  password4  2024-07-30 19:39:47.368971
+1  brady_gagerman   brga1958@colorado.edu          password1  2024-07-30 20:21:51.229117
+2  liam_keyek       liam.keyek@colorado.edu        password2  2024-07-30 20:21:51.229126
+3  brad_richardson  brad.richardson@colorado.edu   password3  2024-07-30 20:21:51.229127
+4  quinn_ridgeway   quinlan.ridgeway@colorado.edu  password4  2024-07-30 20:21:51.229128
 
 Table: sqlite_sequence
 Column Name  Type  Data
@@ -25,24 +25,25 @@ seq
 
 Users       4
 Friends     6
-Reminders   4
+Reminders   5
 Challenges  3
 
 Table: Friends
-Column Name     Type     Data          
--------------------------------------------
-Column Name     Type   
----------------------
-friend_id       INTEGER
-user_id         INTEGER
-friend_user_id  INTEGER
+Column Name        Type     Data             
+-------------------------------------------------
+Column Name        Type   
+------------------------
+friend_id          INTEGER
+user_id            INTEGER
+friend_user_id     INTEGER
+relationship_type  TEXT   
 
-1  1  2
-2  1  3
-3  1  4
-4  2  3
-5  2  4
-6  3  4
+1  1  2  schoolmate
+2  1  3  groupmate 
+3  1  4  friend    
+4  2  3  schoolmate
+5  2  4  groupmate 
+6  3  4  friend    
 
 Table: Reminders
 Column Name    Type     Data         
@@ -60,6 +61,7 @@ message        TEXT
 2  1  2  2024-07-23  2024-08-06  Reminder to interact with user 3
 3  2  4  2024-07-23  2024-08-06  Reminder to interact with user 4
 4  4  6  2024-07-23  2024-08-06  Reminder to interact with user 3
+5  1  3  2024-07-23  2024-08-06  Reminder to Interact with user 4
 
 Table: Challenges
 Column Name   Type     Data        

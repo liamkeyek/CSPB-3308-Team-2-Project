@@ -62,7 +62,7 @@ h3::after {
     background-color: white;
 }
 
-.p-container {
+/*.p-container {
     display: flex;
     flex-direction: row; 
     justify-content: center; 
@@ -70,4 +70,34 @@ h3::after {
     margin-top: 10px; 
     width: 100%; 
     box-sizing: border-box; 
+}*/
+
+.p-container {
+    width: 100%;
+    box-sizing: border-box; 
+}
+
+.p-container p {
+    display: inline-block;
+    width: 48%;
+    text-align: center;
+}
+
+.p-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+    width: 100%;
+}
+
+.p-container ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid white;
+}
+
+.p-container ul li span {
+    width: 48%;
+    text-align: center;
 }

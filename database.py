@@ -29,6 +29,7 @@ def create(db_filename):
         friend_id INTEGER PRIMARY KEY AUTOINCREMENT,
         user_id INTEGER NOT NULL,
         friend_user_id INTEGER NOT NULL,
+        relationship_type TEXT NOT NULL,
         FOREIGN KEY (user_id) REFERENCES Users(user_id),
         FOREIGN KEY (friend_user_id) REFERENCES Users(user_id)
     );
@@ -87,16 +88,16 @@ def fill(db_filename):
 
     # Friends for the website
     friends = [
-        (1, 1, 2), # brady and liam
-        (2, 1, 3), # brady and brad
-        (3, 1, 4), # brady and quinn
-        (4, 2, 3), # liam and brad
-        (5, 2, 4), # liam and quinn
-        (6, 3, 4)  # brad and quinn
+        (1, 1, 2, 'schoolmate'), # brady and liam
+        (2, 1, 3, 'groupmate'), # brady and brad
+        (3, 1, 4, 'friend'), # brady and quinn
+        (4, 2, 3, 'schoolmate'), # liam and brad
+        (5, 2, 4, 'groupmate'), # liam and quinn
+        (6, 3, 4, 'friend')  # brad and quinn
     ]
 
     for friend in friends:
-        c.execute('INSERT INTO Friends (friend_id, user_id, friend_user_id) VALUES (?, ?, ?)', friend)
+        c.execute('INSERT INTO Friends (friend_id, user_id, friend_user_id, relationship_type) VALUES (?, ?, ?, ?)', friend)
     
     # Reminders for the website
     reminder_d = datetime.now().date() + timedelta(days=7)
@@ -105,7 +106,8 @@ def fill(db_filename):
         (1, 1, 1, last_messaged, reminder_d, 'Reminder to interact with user 2'), # brady interacts with liam
         (2, 1, 2, last_messaged, reminder_d, 'Reminder to interact with user 3'), # brady interacts with brad
         (3, 2, 4, last_messaged, reminder_d, 'Reminder to interact with user 4'), # liam interacts with quinn
-        (4, 4, 6, last_messaged, reminder_d, 'Reminder to interact with user 3')  # quinn interacts with brad
+        (4, 4, 6, last_messaged, reminder_d, 'Reminder to interact with user 3'),  # quinn interacts with brad
+        (5, 1, 3, last_messaged, reminder_d, 'Reminder to Interact with user 4')
     ]
 
     for reminder in reminders: 

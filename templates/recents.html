@@ -18,6 +18,14 @@
             <div class="p-container">
                 <p>Name</p>
                 <p>Date</p>
+                <ul>
+                    {% for reminder in reminders %}
+                        <li>
+                            <span>{{ reminder[1] }}</span>
+                            <span>{{ reminder[2] }}</span>
+                        </li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
         <div id="chat">
@@ -25,14 +33,29 @@
             <div class="p-container">
                 <p>Name</p>
                 <p>Next Date</p>
+                <ul>
+                    {% for reminder in reminders %}
+                    <li>
+                        <span>{{ reminder[1] }}</span>
+                        <span>{{ reminder[3] }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
         <div id="reconnect">
             <h3>Reconnect</h3>
             <div class="p-container">
                 <p>Name</p>
-                <p>Last Missed</p>
                 <p>Relationship</p>
+                <ul>
+                   {% for reminder in reminders %}
+                    <li>
+                        <span>{{ reminder[1] }}</span>
+                        <span>{{ reminder[5] }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
     </div>
