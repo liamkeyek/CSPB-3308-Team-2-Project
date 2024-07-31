@@ -40,6 +40,7 @@ def create(db_filename):
         reminder_id INTEGER PRIMARY KEY AUTOINCREMENT,
         user_id INTEGER NOT NULL,
         friend_id INTEGER NOT NULL,
+        last_messaged DATE,
         reminder_date DATE NOT NULL,
         message TEXT NOT NULL,
         FOREIGN KEY (user_id) REFERENCES Users(user_id),
@@ -99,15 +100,16 @@ def fill(db_filename):
     
     # Reminders for the website
     reminder_d = datetime.now().date() + timedelta(days=7)
+    last_messaged = datetime.now().date() - timedelta(days=7)
     reminders = [
-        (1, 1, 1, reminder_d, 'Reminder to interact with user 2'), # brady interacts with liam
-        (2, 1, 2, reminder_d, 'Reminder to interact with user 3'), # brady interacts with brad
-        (3, 2, 4, reminder_d, 'Reminder to interact with user 4'), # liam interacts with quinn
-        (4, 4, 6, reminder_d, 'Reminder to interact with user 3')  # quinn interacts with brad
+        (1, 1, 1, last_messaged, reminder_d, 'Reminder to interact with user 2'), # brady interacts with liam
+        (2, 1, 2, last_messaged, reminder_d, 'Reminder to interact with user 3'), # brady interacts with brad
+        (3, 2, 4, last_messaged, reminder_d, 'Reminder to interact with user 4'), # liam interacts with quinn
+        (4, 4, 6, last_messaged, reminder_d, 'Reminder to interact with user 3')  # quinn interacts with brad
     ]
 
     for reminder in reminders: 
-        c.execute('INSERT INTO Reminders (reminder_id, user_id, friend_id, reminder_date, message) VALUES (?, ?, ?, ?, ?)', reminder)
+        c.execute('INSERT INTO Reminders (reminder_id, user_id, friend_id, last_messaged, reminder_date, message) VALUES (?, ?, ?, ?, ?, ?)', reminder)
     
     # Challenges for the website
     start_date = datetime.now().date()
