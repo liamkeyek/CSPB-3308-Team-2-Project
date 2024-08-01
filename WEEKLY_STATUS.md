@@ -28,3 +28,15 @@
   - Officially assigned everyone to their respective pages
   - Discussed backend frameworks to use
   - Set goals to be completed by next week's meeting
+ 
+**Next Meeting**
+<img width="859" alt="Screenshot 2024-07-31 at 7 45 56 PM" src="https://github.com/user-attachments/assets/c0095d2f-b043-4805-84cd-33c42463ff1e">
+
+- **What we did**
+  - Started working on webpages
+  - Started the backend framework so everything works cohesively
+  - Discussed what our next steps would be
+  - Designed to greater detail what the website would look like
+
+**Next Meeting**
+
