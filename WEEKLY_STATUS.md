@@ -17,6 +17,8 @@
   - Decided on a rough framework for the layout of the website
   - Moved weekly meeting for next week to Monday
   - Decided on how we will move forward to the next area of the project
+
+**Milestone 4**
     
 <img width="877" alt="Screenshot 2024-07-04 at 9 27 11 AM" src="https://github.com/liamkeyek/CSPB-3308-Team-2-Project/assets/98975804/1e039ccc-94a0-45d2-a2ce-19f5c55f02e9">
 
