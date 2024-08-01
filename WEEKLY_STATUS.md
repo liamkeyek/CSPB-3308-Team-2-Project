@@ -47,5 +47,17 @@
   - Discussed what testing we needed to complete
   - We started to look at and discuss week 5 to make sure we knew what we needed to do
   - Went over what we needed out of the sql tables and how we think we will make them
+ 
+
+**Next Meeting**
+<img width="840" alt="Screenshot 2024-07-31 at 7 59 12 PM" src="https://github.com/user-attachments/assets/8e4765ad-64ce-4305-9713-612d56e304e4">
+
+- **What we did**
+  - Have our sql design and are moving onto to implementation next
+  - Made sure we have our backend framework running properly
+  - Have exact design for our website pre-sql implementation and possible problems
+  - Started to look ahead to whats next
+
+**Next Meeting**
 
 
