@@ -59,5 +59,13 @@
   - Started to look ahead to whats next
 
 **Next Meeting**
+<img width="848" alt="Screenshot 2024-07-31 at 8 11 55 PM" src="https://github.com/user-attachments/assets/95d6dbc2-6fc9-4ab2-a2df-be8e1c85c94b">
+
+- **What we did**
+  - Made sure everyone knew what next steps were
+  - Discussed how much longer we needed before everything is up and running
+  - Visual walk through of the websites and database to make sure everyone understands everything we have so far
+  - Discussed what our final steps are and our attack plan, challanges we still have and how to attack them
+  - Discussed things we need to get rid of and other things we still need to add
 
 
