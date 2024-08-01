@@ -30,7 +30,8 @@
   - Set goals to be completed by next week's meeting
  
 **Next Meeting**
-<img width="859" alt="Screenshot 2024-07-31 at 7 45 56 PM" src="https://github.com/user-attachments/assets/c0095d2f-b043-4805-84cd-33c42463ff1e">
+<img width="851" alt="Screenshot 2024-07-31 at 7 52 16 PM" src="https://github.com/user-attachments/assets/13a0d6c8-2501-41fe-9c0e-2646f13604e8">
+
 
 - **What we did**
   - Started working on webpages
