@@ -40,4 +40,12 @@
   - Designed to greater detail what the website would look like
 
 **Next Meeting**
+<img width="846" alt="Screenshot 2024-07-31 at 7 53 48 PM" src="https://github.com/user-attachments/assets/f0376230-15a6-468a-aec6-ac42e86533dc">
+
+- **What we did**
+  - Finished all we needed to understand and implement our pages
+  - Discussed what testing we needed to complete
+  - We started to look at and discuss week 5 to make sure we knew what we needed to do
+  - Went over what we needed out of the sql tables and how we think we will make them
+
 
