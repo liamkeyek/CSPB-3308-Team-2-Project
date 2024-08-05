@@ -1,0 +1,20 @@
+.placeholder-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.placeholder-container h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.placeholder-container p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.placeholder-container a {
+    text-decoration: none;
+    color: #007bff;
+    font-size: 1.1em;
+}

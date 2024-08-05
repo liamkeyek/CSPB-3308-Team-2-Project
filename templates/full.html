@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/recents.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/friends.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/homess') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/login') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/upcoming.css') }}">
     {% endblock %}
@@ -26,7 +25,7 @@
                 <li><a href="{{ url_for('about') }}">About</a></li>
                 <li><a href="{{ url_for('login') }}">Login</a></li>
             </ul>
-        </nav>
+        </nav>        
     </header>
     <main>
         {% block content %}

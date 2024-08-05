@@ -1,0 +1,140 @@
+/*
+Calendar Styling (home.css)
+
+This CSS file defines the visual structure and appearance of our calendar application.
+Key features include:
+- Responsive layout with max-width of 1200px
+- Clean, sans-serif typography using Arial
+- Color scheme:
+  - Dark gray (#333) for header
+  - Red (#cc0000) for calendar header and highlights
+  - Light gray (#f4f4f4) for page background
+  - White for calendar background
+- Styled navigation links in the header
+- Calendar displayed as a full-width table
+- Reminder styling with light red background
+- Current day highlight with red border and background
+
+Last updated: Liam Keyek (8/5/2024)
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    margin-top: 1rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+main {
+    padding: 2rem 0;
+}
+
+.calendar-container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.calendar-header {
+    background-color: #cc0000;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.calendar-header h2 {
+    margin: 0;
+}
+
+.calendar-nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.calendar {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar th,
+.calendar td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.calendar th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.calendar .empty {
+    background-color: #f9f9f9;
+}
+
+.day-number {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.reminders {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.8em;
+    text-align: left;
+}
+
+.reminders li {
+    background-color: #ffe6e6;
+    margin: 2px 0;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+.calendar-nav a:hover {
+    color: #ffcccc;
+}
+
+.current-day {
+    background-color: #ffcccc;
+    border: 2px solid #cc0000;
+}
+
+.current-day .day-number {
+    color: #cc0000;
+    font-weight: bold;
+}

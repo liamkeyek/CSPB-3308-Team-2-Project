@@ -1,12 +1,71 @@
 {% extends "full.html" %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Home - Calendar{% endblock %}
 
 {% block extra_styles %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 {% endblock %}
 
 {% block content %}
-    <h1>Home</h1>
-    <p>Welcome to the home page!</p>
+<div class="container">
+    <header>
+        <h1>Welcome to Your Calendar</h1>
+        <nav>
+            <a href="{{ url_for('recents') }}">Recents</a>
+            <a href="{{ url_for('friends') }}">Friends</a>
+            <a href="{{ url_for('upcoming') }}">Upcoming</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('login') }}">Login</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <h2>{{ month_name }} {{ year }}</h2>
+                <div class="calendar-nav">
+                    <a href="{{ url_for('home', month=prev_month, year=prev_year) }}">&lt; Previous</a>
+                    <a href="{{ url_for('home', month=next_month, year=next_year) }}">Next &gt;</a>
+                </div>
+            </div>
+            <table class="calendar">
+                <thead>
+                    <tr>
+                        <th>Mon</th>
+                        <th>Tue</th>
+                        <th>Wed</th>
+                        <th>Thu</th>
+                        <th>Fri</th>
+                        <th>Sat</th>
+                        <th>Sun</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for week in cal %}
+                    <tr>
+                        {% for day in week %}
+                        <td class="{% if day == 0 %}empty{% endif %}{% if day == current_day %} current-day{% endif %}">
+                            {% if day != 0 %}
+                            <div class="day-number">{{ day }}</div>
+                            {% if day in reminders %}
+                            <ul class="reminders">
+                                {% for reminder in reminders[day] %}
+                                <li>{{ reminder }}</li>
+                                {% endfor %}
+                            </ul>
+                            {% endif %}
+                            {% endif %}
+                        </td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{{ url_for('static', filename='js/home.js') }}"></script>
 {% endblock %}
