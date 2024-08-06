@@ -5,8 +5,9 @@
 ## The module will create an app for you to use
 import prefix
 import sqlite3
-
-from flask import Flask, url_for, make_response, render_template
+from flask import Flask, request, url_for, make_response, render_template
+from datetime import datetime, timedelta
+import calendar
 
 # create app to use in this Flask application
 app = Flask(__name__)
@@ -45,9 +46,76 @@ def prefix_url():
 def index():
     return render_template("full.html")
 
+"""
+Home Route ('/home'):
+Displays a monthly calendar view with reminders.
+Features:
+- Shows a monthly calendar
+- Allows navigation between months
+- Highlights the current day
+- Displays reminders for specific dates
+Query Parameters:
+- month (int): The month to display (1-12)
+- year (int): The year to display
+Notes:
+- Handles year rollover when navigating between months
+- Uses the 'calendar' module to generate calendar data
+- Currently uses hardcoded reminder data
+
+Last updated: Liam Keyek (8/5/2024)
+"""
 @app.route('/home')
 def home():
-    return render_template("home.html")
+    current_date = datetime.now()
+    month = request.args.get('month', default=current_date.month, type=int)
+    year = request.args.get('year', default=current_date.year, type=int)
+
+    # Ensure month is within 1-12
+    if month < 1:
+        month, year = 12, year - 1
+    elif month > 12:
+        month, year = 1, year + 1
+
+    cal = calendar.monthcalendar(year, month)
+    month_name = calendar.month_name[month]
+
+    prev_month = month - 1 if month > 1 else 12
+    prev_year = year if month > 1 else year - 1
+    next_month = month + 1 if month < 12 else 1
+    next_year = year if month < 12 else year + 1
+
+    # Updated reminders data
+    reminders = {
+        15: ["Call Liam", "Call Brad"],
+        22: ["Call Brady"],
+        28: ["Call Quinn"]
+    }
+
+    current_day = current_date.day if current_date.month == month and current_date.year == year else None
+
+    return render_template("home.html", 
+                           cal=cal,
+                           month_name=month_name,
+                           year=year,
+                           reminders=reminders,
+                           prev_month=prev_month,
+                           prev_year=prev_year,
+                           next_month=next_month,
+                           next_year=next_year,
+                           current_day=current_day)
+
+"""
+Add Reminder Route ('/add_reminder'):
+Placeholder for adding new reminders to the calendar.
+Features:
+- Currently renders a template for adding reminders
+
+Last updated: Liam Keyek (8/5/2024)
+"""
+@app.route('/add_reminder')
+def add_reminder():
+    # Render a template for adding reminders (create add_reminder.html in templates folder)
+    return render_template("add_reminder.html")
 
 @app.route('/about')
 def about():

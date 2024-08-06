@@ -1,0 +1,15 @@
+{% extends "full.html" %}
+
+{% block title %}Add Reminder{% endblock %}
+
+{% block extra_styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/add_reminder.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="placeholder-container">
+    <h1>Add Reminder</h1>
+    <p>This feature is coming soon! Please check back later.</p>
+    <a href="{{ url_for('home') }}">Back to Home</a>
+</div>
+{% endblock %}
