@@ -1,8 +1,30 @@
+body {
+    background-color: rgba(0, 0, 0, 0.828);
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+#title {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: rgba(235, 13, 13, 0.7);
+}
 .container {
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    background-color: white;
+    color: black;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 form {
     background: white;
