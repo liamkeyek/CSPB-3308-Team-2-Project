@@ -1,12 +1,42 @@
 {% extends "full.html" %}
 
-{% block title %}About{% endblock %}
+{% block title %}About FriendNudge{% endblock %}
 
 {% block extra_styles %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
 {% endblock %}
 
 {% block content %}
-    <h1>About</h1>
-    <p>Welcome to the about page!</p>
+    <main class="about-page">
+        <h1>About FriendNudge</h1>
+        
+        <section class="intro">
+            <h2>Nurturing Lifelong Connections</h2>
+            <p>In our fast-paced world, maintaining meaningful friendships can be challenging. That's where FriendNudge comes in – your personal assistant for cultivating and strengthening lifelong connections.</p>
+        </section>
+
+        <section class="features">
+            <h2>What FriendNudge Does:</h2>
+            <ul>
+                <li>Tracks your interactions with friends</li>
+                <li>Sends gentle reminders to reach out</li>
+                <li>Helps you prioritize and maintain your social circle</li>
+            </ul>
+        </section>
+
+        <section class="why-friendnudge">
+            <h2>Why FriendNudge?</h2>
+            <p>We understand that true friendships require care and attention. FriendNudge is designed to seamlessly integrate into your life, ensuring that no important relationship falls by the wayside. Whether it's a quick call, a heartfelt message, or planning a meet-up, our app helps you stay present in the lives of those who matter most.</p>
+        </section>
+
+        <section class="mission">
+            <h2>Our Mission:</h2>
+            <p>At FriendNudge, we're passionate about fostering strong, lasting connections. We believe that technology should enhance our relationships, not replace them. By providing timely, personalized reminders, we empower you to be the friend you aspire to be.</p>
+        </section>
+
+        <section class="call-to-action">
+            <p>Join us in strengthening the fabric of your social life. With FriendNudge, nurturing friendships becomes an effortless part of your daily routine.</p>
+            <p><strong>Start your journey to more meaningful connections today with FriendNudge.</strong></p>
+        </section>
+    </main>
 {% endblock %}
