@@ -1,12 +1,34 @@
 {% extends "full.html" %}
 
-{% block title %}Upcoming{% endblock %}
+{% block title %}Upcoming Reminders{% endblock %}
 
 {% block extra_styles %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/upcoming.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/upcoming.css') }}">
 {% endblock %}
 
 {% block content %}
-    <h1>Upcoming</h1>
-    <p>Welcome to the Upcoming page!</p>
+<div class="reminders-page" role="main">
+    <h1>Upcoming Reminders</h1>
+    
+    <div class="section reminder-form-section">
+        <h2>Add a New Reminder</h2>
+        <form id="add-reminder-form">
+            <label for="title">Title:</label>
+            <input type="text" id="title" name="title" required>
+            
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+            
+            <label for="time">Time:</label>
+            <input type="time" id="time" name="time" required>
+            
+            <label for="description">Description:</label>
+            <textarea id="description" name="description"></textarea>
+            
+            <button type="submit">Add Reminder</button>
+            <button type="button">Cancel</button>
+        </form>
+    </div>
+</div>
+
 {% endblock %}
