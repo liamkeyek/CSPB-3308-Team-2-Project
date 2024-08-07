@@ -21,13 +21,13 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    background-color: white;
-    color: black;
+    background-color: #333;
+    color: white;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 form {
-    background: white;
+    background: #444;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -41,6 +41,8 @@ input[type="number"], input[type="text"] {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    background-color: #555;
+    color: white;
 }
 button {
     padding: 10px 15px;
