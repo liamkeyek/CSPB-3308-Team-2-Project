@@ -7,23 +7,26 @@
 {% endblock %}
 
 {% block content %}
-    <div id="title">
-        <h1>Friends</h1>
-    </div>
-    <script src="{{ url_for('static', filename='js/friends.js') }}"></script>
-    <div class="container">
+
+<div class="friends-page" role="main">
+    <h1>Friends</h1>
+
+    <div class="section friend-form-section">
+        <h2>Add a New Friend</h2>
         <form id="add-friend-form">
-            <label for="user_id">Your User ID:</label>
-            <input type="number" id="user_id" name="user_id" required>
-            <br>
-            <label for="friend_user_id">Friend User ID:</label>
-            <input type="number" id="friend_user_id" name="friend_user_id" required>
-            <br>
-            <label for="relationship_type">Relationship Type:</label>
-            <input type="text" id="relationship_type" name="relationship_type" required>
-            <br>
+            <label for="user-id">Your User ID:</label>
+            <input type="text" id="user-id" name="user-id" required>
+            
+            <label for="friend-id">Friend User ID:</label>
+            <input type="text" id="friend-id" name="friend-id" required>
+            
+            <label for="relationship-type">Relationship Type:</label>
+            <input type="text" id="relationship-type" name="relationship-type" required>
+            
             <button type="submit">Add Friend</button>
-            <button type="button" onclick="cancelAdd()">Cancel</button>
+            <button type="button">Cancel</button>
         </form>
     </div>
+</div>
+
 {% endblock %}
