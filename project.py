@@ -5,7 +5,7 @@
 ## The module will create an app for you to use
 import prefix
 import sqlite3
-from flask import Flask, request, url_for, make_response, render_template, jsonify
+from flask import Flask, request, url_for, make_response, render_template, jsonify, redirect
 from datetime import datetime, timedelta
 import calendar
 
@@ -147,26 +147,48 @@ def friends():
 
 @app.route('/add_friend', methods=['POST'])
 def add_friend():
-    data = request.get_json()
-    user_id = data['user_id']
-    friend_user_id = data['friend_user_id']
-    relationship_type = data['relationship_type']
-
+    # Check if request has JSON data or is a form submission
+    if request.is_json:
+        data = request.get_json()
+    else:
+        data = request.form
+    print("Received data: ", data)  # Debugging statement
+    user_id = data.get('user_id')
+    friend_user_id = data.get('friend_user_id')
+    relationship_type = data.get('relationship_type')
+    print(
+        f"user_id: {user_id}, friend_user_id: {friend_user_id}, relationship_type: {relationship_type}"
+    )  # Debugging statement
+    # Validate inputs
+    if not all([user_id, friend_user_id, relationship_type]):
+        response = {'message': 'Invalid input'}
+        return jsonify(response), 400
     # Connect to your database
     conn = sqlite3.connect('ourdata.db')
     cursor = conn.cursor()
-
     # Insert the new friend into the database
-    cursor.execute('''
+    cursor.execute(
+        '''
         INSERT INTO friends (user_id, friend_user_id, relationship_type)
         VALUES (?, ?, ?)
     ''', (user_id, friend_user_id, relationship_type))
-
     conn.commit()
     conn.close()
+    response = {'message': 'Friend added successfully!'}
+    if request.is_json:
+        return jsonify(response)
+    else:
+        return redirect(url_for('display_friends'))
 
-    return jsonify({'message': 'Friend added successfully!'})
-
+@app.route('/display_friends')
+def display_friends():
+    conn = get_database()
+    cursor = conn.cursor()
+    cursor.execute(
+        'SELECT user_id, friend_user_id, relationship_type FROM friends')
+    friends = cursor.fetchall()
+    conn.close()
+    return render_template('display_friends.html', friends=friends)
 
 @app.route('/upcoming')
 def upcoming():
