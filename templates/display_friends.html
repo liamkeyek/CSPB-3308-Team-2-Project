@@ -1,16 +1,20 @@
 {% extends "full.html" %}
-
 {% block title %}Friends List{% endblock %}
-
+{% block extra_styles %}
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/friends.css') }}"
+    />
+{% endblock %}
 {% block content %}
     <div class="friends-page" role="main">
         <h1>Friends List</h1>
-        <ul>
+        <ul class="friends-list">
             {% for friend in friends %}
-            <li>
-                User ID: {{ friend['user_id'] }}, Friend User ID: {{
-                friend['friend_user_id'] }}, Relationship Type: {{
-                friend['relationship_type'] }}
+            <li class="friend-item">
+                <strong>User ID:</strong> {{ friend['user_id'] }}, 
+                <strong>Friend User ID:</strong> {{ friend['friend_user_id'] }}, 
+                <strong>Relationship Type:</strong> {{ friend['relationship_type'] }}
             </li>
             {% endfor %}
         </ul>
