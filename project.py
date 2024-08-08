@@ -37,9 +37,11 @@ def prefix_url():
 ##     2. static text page, "about"   @app.route('/about')
 ##     3. dynamic page, "login"       @app.route('/login')
 ##     4. dynamic page, "home"        @app.route('/home') - Liam
-##     6. dynamic page,"recents"      @app.route('/recents') - Brady
+##     6. dynamic page, "recents"     @app.route('/recents') - Brady
 ##     7. dynamic page, "newfriends"  @app.route('/friends') - Brad
-##     8. dynamiv page, "upcoming"    @app.route('/upcoming') - Quinn
+##     8. dynamic page, "upcoming"    @pp.route('/upcoming') - Brady   
+##     9. dynamiv page, "challenges"  @app.route('/challenges') - Quinn
+##     10. endpoint, "accept_challenge" @app.route('/accept_challenges') - Quinn
 ##
 ################################################################################
 @app.route('/')
@@ -148,6 +150,61 @@ def friends():
 @app.route('/upcoming')
 def upcoming():
     return render_template("upcoming.html")
+
+@app.route('/challenges')
+def challenges():
+    conn = get_database()
+    c = conn.cursor()
+    user_id = 1
+    c.execute('''
+        SELECT challenge_id, title, description, joint_flag, user_id_a, user_id_b, start_date, end_date
+        FROM Challenges
+        WHERE user_id_a = ? OR user_id_b = ?
+    ''', (user_id, user_id))
+    challenges = c.fetchall()
+    conn.close()
+    
+    formatted_challenges = []
+    for challenge in challenges:
+        formatted_challenge = {
+            'challenge_id': challenge[0],
+            'title': challenge[1],
+            'description': challenge[2],
+            'joint_flag': challenge[3],
+            'user_id_a': challenge[4],
+            'user_id_b': challenge[5],
+            'start_date': challenge[6],
+            'end_date': challenge[7],
+            'status': 'Active' if datetime.strptime(challenge[6], '%Y-%m-%d').date() <= datetime.now().date() <= datetime.strptime(challenge[7], '%Y-%m-%d').date() else 'Expired'
+        }
+        formatted_challenges.append(formatted_challenge)
+
+    return render_template("challenges.html", challenges=formatted_challenges)
+
+@app.route('/accept_challenge', methods=['POST'])
+def accept_challenge():
+    data = request.json
+    challenge_id = data.get('challenge_id')
+    user_id = 1  
+
+    conn = get_database()
+    c = conn.cursor()
+
+
+    c.execute('''
+        SELECT * FROM Challenges
+        WHERE challenge_id = ? AND (user_id_a = ? OR user_id_b = ?)
+    ''', (challenge_id, user_id, user_id))
+    challenge = c.fetchone()
+
+    if challenge:
+        conn.close()
+        return jsonify({'message': 'Challenge accepted successfully!'})
+    else:
+        conn.close()
+        return jsonify({'message': 'Challenge not found or you are not part of this challenge.'}), 404
+
+    
 
 ###############################################################################
 # main driver function

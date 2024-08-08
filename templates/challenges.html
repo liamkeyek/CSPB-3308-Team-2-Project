@@ -1,0 +1,31 @@
+{% extends "full.html" %}
+
+{% block title %}Challenges{% endblock %}
+
+{% block extra_styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/challenges.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="challenges-page" role="main">
+    <h1>Challenges</h1>
+    <div class="section challenges-list">
+        <h2>Weekly Challenges</h2>
+        <ul id="challenges-list">
+            {% for challenge in challenges %}
+            <li class="challenge-item">
+                <h3>{{ challenge.title }}</h3>
+                <p>{{ challenge.description }}</p>
+                <p>Start Date: {{ challenge.start_date }}</p>
+                <p>End Date: {{ challenge.end_date }}</p>
+                <p>Status: {{ challenge.status }}</p>
+                {% if challenge.joint_flag %}
+                <p>Joint Challenge</p>
+                {% endif %}
+                <button onclick="acceptChallenge({{ challenge.challenge_id }})">Accept Challenge</button>
+            </li>
+            {% endfor%}
+        </ul>
+    </div>
+</div>
+{% endblock %}
