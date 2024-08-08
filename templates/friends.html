@@ -1,32 +1,45 @@
-{% extends "full.html" %}
+{% extends "full.html" %} 
 
-{% block title %}Friends{% endblock %}
+{% block title %}Friends{% endblock %} 
 
 {% block extra_styles %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/friends.css') }}">
-{% endblock %}
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/friends.css') }}"
+    />
+{% endblock %} 
 
 {% block content %}
-
-<div class="friends-page" role="main">
-    <h1>Friends</h1>
-
-    <div class="section friend-form-section">
-        <h2>Add a New Friend</h2>
-        <form id="add-friend-form">
-            <label for="user-id">Your User ID:</label>
-            <input type="text" id="user-id" name="user-id" required>
-            
-            <label for="friend-id">Friend User ID:</label>
-            <input type="text" id="friend-id" name="friend-id" required>
-            
-            <label for="relationship-type">Relationship Type:</label>
-            <input type="text" id="relationship-type" name="relationship-type" required>
-            
-            <button type="submit">Add Friend</button>
-            <button type="button" onclick="cancelAdd()">Cancel</button>
-        </form>
+    
+    <div class="friends-page" role="main">
+        <h1>Friends</h1>
+    
+        <div class="section friend-form-section">
+            <h2>Add a New Friend</h2>
+            <form id="add-friend-form" method="post" action="/add_friend">
+                <label for="user_id">Your User ID:</label>
+                <input type="text" id="user_id" name="user_id" required />
+    
+                <label for="friend_user_id">Friend User ID:</label>
+                <input
+                    type="text"
+                    id="friend_user_id"
+                    name="friend_user_id"
+                    required
+                />
+    
+                <label for="relationship_type">Relationship Type:</label>
+                <input
+                    type="text"
+                    id="relationship_type"
+                    name="relationship_type"
+                    required
+                />
+    
+                <button type="submit">Add Friend</button>
+                <button type="button" onclick="cancelAdd()">Cancel</button>
+            </form>
+        </div>
     </div>
-</div>
-
-{% endblock %}
+    
+    {% endblock %}

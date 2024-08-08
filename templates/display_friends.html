@@ -1,0 +1,18 @@
+{% extends "full.html" %}
+
+{% block title %}Friends List{% endblock %}
+
+{% block content %}
+    <div class="friends-page" role="main">
+        <h1>Friends List</h1>
+        <ul>
+            {% for friend in friends %}
+            <li>
+                User ID: {{ friend['user_id'] }}, Friend User ID: {{
+                friend['friend_user_id'] }}, Relationship Type: {{
+                friend['relationship_type'] }}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
