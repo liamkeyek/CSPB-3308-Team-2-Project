@@ -7,11 +7,10 @@
 {% endblock %}
 
 {% block content %}
-    <title>Recents</title>
+<div class="recents-page">
+    <h1>Recents</h1>
     <script src="{{ url_for('static', filename='javascript/recents.js') }}"></script>
-    <div id="title">
-        <h1>Recents</h1>
-    </div>
+    
     <div class="top">
         <div id="last">
             <h3>Last Messaged</h3>
@@ -59,4 +58,5 @@
             </div>
         </div>
     </div>
+</div>
 {% endblock %}

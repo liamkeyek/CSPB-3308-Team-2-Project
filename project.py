@@ -5,7 +5,7 @@
 ## The module will create an app for you to use
 import prefix
 import sqlite3
-from flask import Flask, request, url_for, make_response, render_template
+from flask import Flask, request, url_for, make_response, render_template, jsonify
 from datetime import datetime, timedelta
 import calendar
 
@@ -146,6 +146,29 @@ def recents():
 @app.route('/friends')
 def friends():
     return render_template("friends.html")
+
+@app.route('/add_friend', methods=['POST'])
+def add_friend():
+    data = request.get_json()
+    user_id = data['user_id']
+    friend_user_id = data['friend_user_id']
+    relationship_type = data['relationship_type']
+
+    # Connect to your database
+    conn = sqlite3.connect('ourdata.db')
+    cursor = conn.cursor()
+
+    # Insert the new friend into the database
+    cursor.execute('''
+        INSERT INTO friends (user_id, friend_user_id, relationship_type)
+        VALUES (?, ?, ?)
+    ''', (user_id, friend_user_id, relationship_type))
+
+    conn.commit()
+    conn.close()
+
+    return jsonify({'message': 'Friend added successfully!'})
+
 
 @app.route('/upcoming')
 def upcoming():

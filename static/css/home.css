@@ -19,69 +19,82 @@ Last updated: Liam Keyek (8/5/2024)
 */
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-.container {
+.calendar-page {
+    width: 90%;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
-    text-align: center;
+.calendar-page h1 {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    background-color: rgba(235, 13, 13, 0.8);
+    margin: -30px -30px 30px -30px;
+    padding: 0 30px;
+    border-radius: 15px 15px 0 0;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-header h1 {
-    margin: 0;
+.section {
+    background: #333333;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-nav {
-    margin-top: 1rem;
+.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
 }
 
-nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: bold;
+.section h2 {
+    color: white;
+    margin-top: 0;
+    font-size: 1.8em;
+    border-bottom: 8px solid #ff4d4d;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 }
 
-main {
-    padding: 2rem 0;
-}
-
-.calendar-container {
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-.calendar-header {
-    background-color: #cc0000;
-    color: #fff;
-    padding: 1rem;
+.calendar-nav {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-}
-
-.calendar-header h2 {
-    margin: 0;
+    margin-bottom: 20px;
 }
 
 .calendar-nav a {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
-    margin: 0 10px;
+    background-color: #ff4d4d;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.calendar-nav a:hover {
+    background-color: #ff8080;
 }
 
 .calendar {
@@ -91,18 +104,18 @@ main {
 
 .calendar th,
 .calendar td {
-    border: 1px solid #ddd;
+    border: 1px solid #4a4a4a;
     padding: 10px;
     text-align: center;
 }
 
 .calendar th {
-    background-color: #f2f2f2;
+    background-color: #444444;
     font-weight: bold;
 }
 
 .calendar .empty {
-    background-color: #f9f9f9;
+    background-color: #2a2a2a;
 }
 
 .day-number {
@@ -119,22 +132,33 @@ main {
 }
 
 .reminders li {
-    background-color: #ffe6e6;
+    background-color: rgba(255, 77, 77, 0.2);
     margin: 2px 0;
     padding: 2px 4px;
     border-radius: 3px;
 }
 
-.calendar-nav a:hover {
-    color: #ffcccc;
-}
-
 .current-day {
-    background-color: #ffcccc;
-    border: 2px solid #cc0000;
+    background-color: rgba(255, 77, 77, 0.1);
+    border: 2px solid #ff4d4d;
 }
 
 .current-day .day-number {
-    color: #cc0000;
+    color: #ff4d4d;
     font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .calendar-page {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .calendar-page h1 {
+        font-size: 2em;
+    }
+
+    .section {
+        padding: 20px;
+    }
 }
