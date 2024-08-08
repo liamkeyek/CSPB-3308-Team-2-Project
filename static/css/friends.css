@@ -116,3 +116,28 @@ body {
         padding: 20px;
     }
 }
+
+.friends-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.friend-item {
+    background-color: #333333;
+    color: #e0e0e0;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.friend-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.friend-item strong {
+    color: #ffffff;
+}
