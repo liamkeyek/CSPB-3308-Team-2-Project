@@ -82,6 +82,20 @@ h3::after {
     content: none;
 }
 
+
+
+.p-container {
+    width: 100%;
+}
+
+.p-container p {
+    margin: 0;
+    text-align: center;
+    font-weight: bold;
+    width: 48%;
+    display: inline-block;
+}
+
 .p-container ul {
     list-style-type: none;
     padding: 0;
