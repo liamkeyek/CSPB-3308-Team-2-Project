@@ -180,14 +180,15 @@ def add_friend():
     if request.is_json:
         return jsonify(response)
     else:
-        return redirect(url_for('display_friends'))
+        return redirect(url_for('display_friends', user_id=user_id))
 
 @app.route('/display_friends')
 def display_friends():
+    user_id = request.args.get('user_id')
     conn = get_database()
     cursor = conn.cursor()
     cursor.execute(
-        'SELECT user_id, friend_user_id, relationship_type FROM friends')
+        'SELECT user_id, friend_user_id, relationship_type FROM friends WHERE user_id = ?', (user_id,))
     friends = cursor.fetchall()
     conn.close()
     return render_template('display_friends.html', friends=friends)
