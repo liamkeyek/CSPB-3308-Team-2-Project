@@ -69,3 +69,11 @@
   - Discussed things we need to get rid of and other things we still need to add
 
 
+**Next Meeting**
+<img width="848" alt="Screenshot 2024-08-08 at 6.09.34 PM" src="images/weeklystatusfinal.png">
+
+- **What we did**
+  - determined final features that were going to make it into the ultimate submission
+  - verify everyone completed their tasks
+  - discussed finishing final report
+  - discussed deployment strategies 
